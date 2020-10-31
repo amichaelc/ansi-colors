@@ -11,19 +11,25 @@ endif
 .RECIPEPREFIX = >
 
 linker = lld
+mandir = /usr/local/man
 
 clang = clang src/ansi-colors.c -fuse-ld=$(linker) -o
 
 local:
-> echo $(linker)
 > mkdir build || true
 > $(clang) build/ansi-colors
+.PHONY: local
 
 clean:
-> rm -rf build
+> rm -rf build man
+.PHONY: clean
 
 install:
 > $(clang) /usr/local/bin/ansi-colors
+> sphinx-build -b man doc man
+> gzip man/ansi-colors.1 > /usr/local/man/man1/ansi-colors.1.gz
+.PHONY: install
 
 uninstall:
-> rm -f /usr/local/bin/ansi-colors
+> rm -f /usr/local/bin/ansi-colors /usr/local/man/man1/ansi-colors.1.gz
+.PHONY: uninstall
