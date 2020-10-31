@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
             lower = atoi(argv[1]);
             upper = atoi(argv[2]);
 
-            for (i = lower; i > 0; i--) {
+            for (i = lower; (i % 10) > 0; i--) {
                 printf("    ");
             }
         }
