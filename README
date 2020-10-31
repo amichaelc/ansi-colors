@@ -25,9 +25,17 @@ do about that.
 Installation
 ------------
 
+Download repository:
+
+`git clone https://github.com/amichaelc/ansi-colors`
+
 Local install:
 
 `make`
+
+Clean local:
+
+`make clean`
 
 System install:
 

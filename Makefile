@@ -25,9 +25,10 @@ clean:
 .PHONY: clean
 
 install:
+> mkdir -p /usr/local/{bin,man/man1} || true
 > $(clang) /usr/local/bin/ansi-colors
 > sphinx-build -b man doc man
-> gzip man/ansi-colors.1 > /usr/local/man/man1/ansi-colors.1.gz
+> gzip -c man/ansi-colors.1 > /usr/local/man/man1/ansi-colors.1.gz
 .PHONY: install
 
 uninstall:
