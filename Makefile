@@ -10,14 +10,9 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
-linker = lld
-mandir = /usr/local/man
-
-clang = clang src/ansi-colors.c -fuse-ld=$(linker) -o
-
 local:
 > mkdir build || true
-> $(clang) build/ansi-colors
+> gcc src/ansi-colors.c -o build/ansi-colors
 .PHONY: local
 
 clean:
@@ -26,7 +21,7 @@ clean:
 
 install:
 > mkdir -p /usr/local/{bin,man/man1} || true
-> $(clang) /usr/local/bin/ansi-colors
+> gcc src/ansi-colors.c -o /usr/local/bin/ansi-colors
 > sphinx-build -b man doc man
 > gzip -c man/ansi-colors.1 > /usr/local/man/man1/ansi-colors.1.gz
 .PHONY: install
