@@ -1,10 +1,9 @@
-# include <stdio.h>
-# include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    int lower = 0;
     int upper = 150;
-
+    int lower = 0;
     int i;
 
     if (argc < 4) {

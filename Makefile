@@ -10,9 +10,12 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
+CC = gcc
+CFLAGS =
+
 local:
 > mkdir build || true
-> gcc src/ansi-colors.c -o build/ansi-colors
+> $(CC) $(CFLAGS) src/ansi-colors.c -o build/ansi-colors
 .PHONY: local
 
 clean:
@@ -21,7 +24,7 @@ clean:
 
 install:
 > mkdir -p /usr/local/{bin,man/man1} || true
-> gcc src/ansi-colors.c -o /usr/local/bin/ansi-colors
+> $(CC) $(CFLAGS) src/ansi-colors.c -o /usr/local/bin/ansi-colors
 > sphinx-build -b man doc man
 > gzip -c man/ansi-colors.1 > /usr/local/man/man1/ansi-colors.1.gz
 .PHONY: install
