@@ -1,8 +1,8 @@
 ansi-colors
-===============================================================================
+===========
 
 Description
--------------------------------------------------------------------------------
+-----------
 
 When you see colors in a terminal, they occur because of an ANSI escape
 sequence, such as `\e[32m`. The most annoying part of using them, in my
@@ -23,7 +23,7 @@ some terminals might not support escape sequences at all. There's nothing I can
 do about that.
 
 Installation
--------------------------------------------------------------------------------
+------------
 
 Download repository:
 
@@ -46,7 +46,7 @@ System uninstall:
 `sudo make uninstall`
 
 Usage
--------------------------------------------------------------------------------
+-----
 
 Simply type `ansi-colors` at your command line. To control the range of output:
 
@@ -56,6 +56,6 @@ Simply type `ansi-colors` at your command line. To control the range of output:
 Where `n` and `m` are integers.
 
 Notes
--------------------------------------------------------------------------------
+-----
 
 This is programmed with Linux in mind; I make no guarantees about any other OS.
